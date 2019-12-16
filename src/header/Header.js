@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
+import logo from './Logo-01.jpg'
 
 const authenticatedOptions = (
   <React.Fragment>
@@ -23,8 +24,8 @@ const alwaysOptions = (
      
     <Link class="menu-sign" to="/">Home</Link>
     <Link class="menu-sign" to="/Centeres">Centeres </Link>
-
     
+
   </React.Fragment>
 )
 
@@ -37,7 +38,10 @@ const Header = ({ user }) => (
       { user ? authenticatedOptions : unauthenticatedOptions }
       
       
+      
     </nav>
+    <a href="#" ><img className="img" src={logo} height="65px" width="90px"/>
+     </a>
   </header>
 
 

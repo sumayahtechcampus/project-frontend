@@ -3,8 +3,8 @@ $charcoal:#65c7be;
   color:white;
   font-family: 'Righteous', cursive;  ;
 }
+
 .main-header {
-  align-items: left;
   border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
@@ -22,9 +22,16 @@ $charcoal:#65c7be;
   align-items: center;
   display: flex;
   flex-grow: 1;
-  justify-content: flex-end;
  
 }
+.img{
+  display: flex;
+  flex-grow: 1;
+  margin: 14px;
+  
+
+}
+
 
 @media (max-width: 600px) {
   .main-header {
