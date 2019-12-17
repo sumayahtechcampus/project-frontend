@@ -95,7 +95,7 @@ class App extends Component {
   </Carousel.Item>
             </Carousel> */
             }
-<Footer />
+{/* <Footer /> */}
       </React.Fragment>
     )
   }
