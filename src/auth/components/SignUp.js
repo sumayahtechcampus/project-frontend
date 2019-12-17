@@ -12,6 +12,7 @@ class SignUp extends Component {
       email: '',
       password: '',
       passwordConfirmation: '',
+      name: '',
       age: '',
       phone: '',
       relation: ''
@@ -40,7 +41,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation, age, phone, relation  } = this.state
+    const { email, password, passwordConfirmation, name, age, phone, relation  } = this.state
 
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
@@ -73,6 +74,15 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        <label > Name  </label>
+        <input
+          required
+          name="name"
+          value={name}
+          type="text"
+          placeholder="Enter your Name "
+          onChange={this.handleChange}
+        /> 
         <label >Age </label>
         <input
           required
@@ -91,17 +101,15 @@ class SignUp extends Component {
           placeholder="Enter your Phone "
           onChange={this.handleChange}
         />
-
-<label >Relation </label>
+        <label >Relation </label>
         <input
-          
-          name="Relation"
+          required
+          name="relation"
           value={relation}
-          type="number"
+          type="text"
           placeholder="Enter your Relation "
           onChange={this.handleChange}
-        />
-        
+        /> 
         <button type="submit">Sign Up</button>
       </form>
       
