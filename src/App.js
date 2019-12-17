@@ -15,6 +15,7 @@ import slider1 from './background.jpg'
 import slider2 from './book.jpg'
 import slider3 from './bird.jpg'
 import MyProfile from './auth/components/MyProfile'
+import Centeres from './centeres/components/centeres'
 class App extends Component {
   constructor () {
     super()
@@ -24,6 +25,7 @@ class App extends Component {
     }
   }
   setUser = user => this.setState({ user })
+  setCenter = center => this.setState({center})
   clearUser = () => this.setState({ user: null })
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
@@ -39,6 +41,9 @@ class App extends Component {
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
+          )} />
+          <Route path='/centeres' render={() => (
+            <Centeres alert={this.alert} setCenter={this.setCenter} />
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
