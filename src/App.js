@@ -21,17 +21,24 @@ class App extends Component {
     super()
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      centeres: []
     }
   }
   setUser = user => this.setState({ user })
-  setCenter = center => this.setState({center})
+  // setCenter = center => this.setState({center})
+  setCenteres = (centeres) => 
+  {   console.log(centeres);
+
+    this.setState({centeres : [...centeres]}) ; }
+
+
   clearUser = () => this.setState({ user: null })
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
   render () {
-    const { alerts, user } = this.state
+    const { alerts, user, centeres } = this.state
     return (
       <React.Fragment>
         <Header user={user} />
@@ -43,7 +50,7 @@ class App extends Component {
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
           <Route path='/centeres' render={() => (
-            <Centeres alert={this.alert} setCenter={this.setCenter} />
+            <Centeres alert={this.alert} centeres={ centeres} setCenteres={this.setCenteres} />
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
