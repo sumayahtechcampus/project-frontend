@@ -11,7 +11,10 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      age: '',
+      phone: '',
+      relation: ''
     }
   }
 
@@ -31,19 +34,19 @@ class SignUp extends Component {
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
+        this.setState({ email: '', password: '', passwordConfirmation: '', age:'', phone:'', relation:''  })
         alert(messages.signUpFailure, 'danger')
       })
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { email, password, passwordConfirmation, age, phone, relation  } = this.state
 
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
         <h3>Sign Up</h3>
 
-        <label htmlFor="email">Email</label>
+        <label >Email</label>
         <input
           required
           name="email"
@@ -70,8 +73,38 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        <label >Age </label>
+        <input
+          required
+          name="age"
+          value={age}
+          type="number"
+          placeholder="Enter your Age "
+          onChange={this.handleChange}
+        />
+        <label >Phone </label>
+        <input
+          required
+          name="phone"
+          value={phone}
+          type="number"
+          placeholder="Enter your Phone "
+          onChange={this.handleChange}
+        />
+
+<label >Relation </label>
+        <input
+          
+          name="Relation"
+          value={relation}
+          type="number"
+          placeholder="Enter your Relation "
+          onChange={this.handleChange}
+        />
+        
         <button type="submit">Sign Up</button>
       </form>
+      
     )
   }
 }

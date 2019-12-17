@@ -14,30 +14,22 @@ import Footer from './footer/Footer'
 import slider1 from './background.jpg'
 import slider2 from './book.jpg'
 import slider3 from './bird.jpg'
-
-
-
+import MyProfile from './auth/components/MyProfile'
 class App extends Component {
   constructor () {
     super()
-
     this.state = {
       user: null,
       alerts: []
     }
   }
-
   setUser = user => this.setState({ user })
-
   clearUser = () => this.setState({ user: null })
-
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
-
   render () {
     const { alerts, user } = this.state
-
     return (
       <React.Fragment>
         <Header user={user} />
@@ -57,9 +49,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-           
+           <AuthenticatedRoute user={user} path='/my-profile' render={() => (
+            <MyProfile alert={this.alert} user={user} />
+          )} />
           </main>
-         
             {/* <Carousel> 
             <Carousel.Item>
     <img
@@ -82,7 +75,6 @@ class App extends Component {
       width="1285px"
       height="470px"
     />
-
     <Carousel.Caption>
       <h3>Second slide label</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -103,14 +95,9 @@ class App extends Component {
   </Carousel.Item>
             </Carousel> */
             }
-
 <Footer />
       </React.Fragment>
-      
-     
     )
-    
   }
 }
-
 export default App
