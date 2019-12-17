@@ -1,12 +1,12 @@
 import React from 'react';
 import { getAllCenteres } from '../api';
-import Center from './center';
+import Center from '../components/center';
 
 class Centeres extends React.Component {
   componentDidMount() {
     getAllCenteres()
       .then((response) => {
-        this.props.setCenteres(response.data.centeres);
+        this.props.setCenteres(response.data.centers);
       })
       .catch((error) => {
         console.log(error);
@@ -14,17 +14,17 @@ class Centeres extends React.Component {
   }
   
   render() {
-    let allCenteres = <h2>No centeres</h2>;
-
-    if (this.props.centeres.length > 0) {
-      allCenteres = this.props.map((center, index) => {
+    console.log(this.props.centeres)
+    
+    
+    let allCenteres =this.props.centeres ? this.props.centeres.map((center, index) => {
         return <Center name={center.name}
         category={center.category}
         description={center.description}
-        id={center._id}
         key={index} />;
-      });
-    }
+      }): null;
+      console.log(allCenteres,"----", this.props.centeres)
+
 
     return allCenteres;
   }
