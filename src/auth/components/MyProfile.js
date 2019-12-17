@@ -26,15 +26,15 @@ import { Link } from 'react-router-dom'
 // )
 const MyProfile = ({ user }) => (
   <header className="main-header">
-    <nav>
-      { user && <span>Welcome, {user.email}</span>}
-      </nav>
+    
     
 
      <div> 
-      <h1> {user.email} 
-      </h1>
+      <h1>{user.email}</h1>
+      <h2>{user.name}</h2>
       <h2>{user.relation}</h2>
+      <h2>{user.age}</h2>
+      <h2>{user.phone}</h2>
   </div>
   </header>
   
