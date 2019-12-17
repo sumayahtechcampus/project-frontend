@@ -22,7 +22,7 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <React.Fragment>
      
-    <Link class="menu-sign" to="/">Home</Link>
+    <Link class="menu-sign" to="/home">Home</Link>
     <Link class="menu-sign" to="/Centeres">Centeres </Link>
     
 

@@ -59,7 +59,8 @@ class App extends Component {
           )} />
            
           </main>
-            <Carousel> 
+         
+            {/* <Carousel> 
             <Carousel.Item>
     <img
       className="d-block "
@@ -100,10 +101,12 @@ class App extends Component {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-            </Carousel>
+            </Carousel> */
+            }
 
-            <Footer />
+<Footer />
       </React.Fragment>
+      
      
     )
     
