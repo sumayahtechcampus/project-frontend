@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Children } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
@@ -13,29 +13,35 @@ import Footer from './footer/Footer'
 import MyProfile from './auth/components/MyProfile'
 import Centeres from './centeres/components/centeres'
 import Home from './home/Home'
+import Childrens from './children/components/childrens'
 class App extends Component {
   constructor () {
     super()
     this.state = {
       user: null,
       alerts: [],
-      centeres: []
+      centeres: [],
+      childrens:[]
     }
   }
   setUser = user => this.setState({ user })
-  // setCenter = center => this.setState({center})
+
   setCenteres = (centeres) => 
   {   console.log(centeres);
 
     this.setState({centeres : [...centeres]}) ; }
 
+  setChildrens = (childrens) => 
+  {   console.log(childrens);
+
+    this.setState({childrens : [...childrens]}) ; }
 
   clearUser = () => this.setState({ user: null })
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
   render () {
-    const { alerts, user, centeres } = this.state
+    const { alerts, user, centeres ,childrens} = this.state
     return (
       <React.Fragment>
         <Header user={user} />
@@ -52,6 +58,10 @@ class App extends Component {
           <Route path='/centeres' render={() => (
             <Centeres alert={this.alert} centeres={ centeres} setCenteres={this.setCenteres} />
           )} />
+           <Route path='/childrens' render={() => (
+            <Childrens alert={this.alert} childrens={ childrens} setChildrens={this.setChildrens} />
+          )} />
+
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
