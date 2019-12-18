@@ -5,6 +5,8 @@ import profile from './profile.png'
 const MyProfile = ({ user }) => (
   
 <div className="container">
+<br /> 
+<br /> 
 <div className="row">
 <div className="col-12">
 <div className="card">
