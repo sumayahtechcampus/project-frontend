@@ -56,16 +56,14 @@ class SignUp extends Component {
 
                 <div className="card-body">
                   <h5 className="card-title text-center">Register</h5>
-                  <form className="form-signin">
+                  <form className="form-signin" onSubmit={this.onSignUp}>
                     <div className="form-label-group">
-                      <form className='auth-form' onSubmit={this.onSignUp}>
                         <h3>Sign Up</h3>
-                      </form>
+                      
 
                     </div>
 
                     <div className="form-label-group">
-                      {/* <label htmlFor="Email">Email</label> */}
                       <input required name="email" id="inputEmail" className="form-control" value={email} type="email" placeholder="Email" 
                         onChange={this.handleChange} />
                     </div>
@@ -87,17 +85,18 @@ class SignUp extends Component {
 
                     <div className="form-label-group">
                       <label htmlFor="Age"> </label>
-                      <input required name="age" value={age} type="number" id="inputAge" className="from-control" placeholder="Enter your Age" onChange={this.handleChange} />
+                      <input required name="age" value={age} type="number"  className="form-control" placeholder="Enter your Age"
+                       onChange={this.handleChange} />
                     </div>
 
                     <div className="form-label-group">
                       <label htmlFor="phone"> </label>
-                      <input required name="phone" id="inputPhone" className="from-control" value={phone} type="text" placeholder="Enter your Phone " onChange={this.handleChange} />
+                      <input required name="phone" id="inputPhone" className="form-control" value={phone} type="text" placeholder="Enter your Phone " onChange={this.handleChange} />
                     </div>
 
                     <div className="form-label-group">
                       <label htmlFor="relation"> </label>
-                      <input required name="relation" value={relation} type="text" id="inputRelation" className="from-control" placeholder="Enter your Relation"
+                      <input required name="relation" value={relation} type="text" id="inputRelation" className="form-control" placeholder="Enter your Relation"
                         onChange={this.handleChange} />
 
                       <button className="btn btn-lg btn-block text-uppercase btn-pos" type="submit">Sign Up</button>
