@@ -7,7 +7,7 @@ class Childrens extends React.Component {
     console.log('qqqqqqqqqqqqq', this.props.user)
     getAllChildrens(this.props.user)
       .then((response) => {
-        console.log('got the data', response.data.childrens)
+        // console.log('got the data', response.data.childrens)
         this.props.setChildrens(response.data.childrens);
       })
       .catch((error) => {
@@ -27,11 +27,13 @@ class Childrens extends React.Component {
         school={children.school}
         allergy={children.allergy}
         key={index} />;
+        
       }): null;
       console.log(allChildrens,"----", this.props.childrens)
 
 
     return allChildrens;
+    
   }
 }
 

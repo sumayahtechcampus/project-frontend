@@ -11,6 +11,8 @@ const MyProfile = ({ user }) => (
       <h2>{user.relation}</h2>
       <h2>{user.age}</h2>
       <h2>{user.phone}</h2>
+      
+
   </div>
   </header>
   
