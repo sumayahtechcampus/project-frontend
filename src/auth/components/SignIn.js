@@ -68,7 +68,7 @@ class SignIn extends Component {
           <label className="custom-control-label" for="customCheck1">Remember password</label>
           </div>
               
-              <button class="btn btn-lg btn-block text-uppercase btn-pos" type="submit">Sign in</button>
+              <button className="btn btn-lg btn-block text-uppercase btn-pos" type="submit">Sign in</button>
 
       </form>
       
