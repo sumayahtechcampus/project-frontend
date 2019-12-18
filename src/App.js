@@ -8,7 +8,6 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
-import {Carousel} from 'react-bootstrap';
 import Footer from './footer/Footer'
 import MyProfile from './auth/components/MyProfile'
 import Centeres from './centeres/components/centeres'
@@ -21,7 +20,7 @@ class App extends Component {
       user: null,
       alerts: [],
       centeres: [],
-      childrens:[]
+      childrens: []
     }
   }
   setUser = user => this.setState({ user })
@@ -58,8 +57,8 @@ class App extends Component {
           <Route path='/centeres' render={() => (
             <Centeres alert={this.alert} centeres={ centeres} setCenteres={this.setCenteres} />
           )} />
-           <Route path='/childrens' render={() => (
-            <Childrens alert={this.alert} childrens={ childrens} setChildrens={this.setChildrens} />
+           <AuthenticatedRoute path='/childrens' render={() => (
+            <Childrens alert={this.alert} childrens={childrens} setChildrens={this.setChildrens} />
           )} />
 
           <Route path='/sign-in' render={() => (
