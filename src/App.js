@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Children } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -11,28 +10,44 @@ import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 import {Carousel} from 'react-bootstrap';
 import Footer from './footer/Footer'
-import slider1 from './background.jpg'
-import slider2 from './book.jpg'
-import slider3 from './bird.jpg'
 import MyProfile from './auth/components/MyProfile'
+import Centeres from './centeres/components/centeres'
+import Home from './home/Home'
+import Childrens from './children/components/childrens'
 class App extends Component {
   constructor () {
     super()
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      centeres: [],
+      childrens:[]
     }
   }
   setUser = user => this.setState({ user })
+
+  setCenteres = (centeres) => 
+  {   console.log(centeres);
+
+    this.setState({centeres : [...centeres]}) ; }
+
+  setChildrens = (childrens) => 
+  {   console.log(childrens);
+
+    this.setState({childrens : [...childrens]}) ; }
+
   clearUser = () => this.setState({ user: null })
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
   render () {
-    const { alerts, user } = this.state
+    const { alerts, user, centeres ,childrens} = this.state
     return (
       <React.Fragment>
         <Header user={user} />
+        <Route path='/home' render={() => (
+          <Home />
+        )} /> 
         {alerts.map((alert, index) => (
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))}
@@ -40,6 +55,13 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
+          <Route path='/centeres' render={() => (
+            <Centeres alert={this.alert} centeres={ centeres} setCenteres={this.setCenteres} />
+          )} />
+           <Route path='/childrens' render={() => (
+            <Childrens alert={this.alert} childrens={ childrens} setChildrens={this.setChildrens} />
+          )} />
+
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
@@ -53,6 +75,7 @@ class App extends Component {
             <MyProfile alert={this.alert} user={user} />
           )} />
           </main>
+<<<<<<< HEAD
             {/* <Carousel> 
             <Carousel.Item>
     <img
@@ -96,6 +119,9 @@ class App extends Component {
             </Carousel> */
             }
 {/* <Footer /> */}
+=======
+          <Footer />
+>>>>>>> 2355d8dd275bef98ce536642b89db41902b6ae10
       </React.Fragment>
     )
   }

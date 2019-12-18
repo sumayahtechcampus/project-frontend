@@ -9,9 +9,13 @@ export const signUp = credentials => {
       credentials: {
         email: credentials.email,
         password: credentials.password,
-        password_confirmation: credentials.passwordConfirmation
+        password_confirmation: credentials.passwordConfirmation,
+        relation: credentials.relation,
+        age: credentials.age,
+        phone: credentials.phone,
+        name: credentials.name
       }
-    }
+    } 
   })
 }
 
