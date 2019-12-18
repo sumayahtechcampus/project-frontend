@@ -1,15 +1,14 @@
-$charcoal:#65c7be;
 .menu-sign{
-  color:white;
-  font-family: 'Righteous', cursive;  ;
+  color:black ;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .main-header {
-  border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
   padding: 0 20px;
-  background-color:#65c7be;
+  background: rgb(101,199,190);
+background: linear-gradient(90deg, rgba(101,199,190,0.5219129888283438) 19%, rgba(255,139,112,1) 36%, rgba(255,217,102,1) 81%);
 
   a,
   span {
@@ -53,7 +52,6 @@ $charcoal:#65c7be;
 
     a,
     span {
-      border: 1px solid $charcoal;
       margin-bottom: 5px;
       text-align: center;
       width: 80%;
