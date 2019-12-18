@@ -35,7 +35,7 @@ const Header = ({ user }) => (
   <header className="main-header">
     <nav>
       { alwaysOptions }
-      { user && <span>Welcome, {user.email}</span>}
+      { user && <span>Welcome , {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }
       
       

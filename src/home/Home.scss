@@ -1,8 +1,11 @@
 .carousel-item {
-  
-    background: no-repeat center center scroll;
+      background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+  .carousel-inner img {
+    margin: auto;
+    
   }
