@@ -1,9 +1,12 @@
 import React from "react";
 import './Home.scss'; 
 import {Carousel} from 'react-bootstrap';
-import slider1 from './background.jpg'
-import slider2 from './book.jpg'
-import slider3 from './bird.jpg'
+// import slider1 from './background.jpg'
+// import slider2 from './book.jpg'
+import slider1 from './bird.jpg'
+import slider2 from './kids.jpeg'
+import slider3 from './clear.jpeg'
+
 
 function Home() {
   return (
