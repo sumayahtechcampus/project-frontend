@@ -8,6 +8,7 @@ const authenticatedOptions = (
     <Link class="menu-sign" to="/change-password">Change Password</Link>
     <Link class="menu-sign" to="/sign-out">Sign Out</Link>
     <Link class="menu-sign" to="/my-profile">My Profile </Link>
+    <Link class="menu-sign" to="/my-childrens">My Childrens </Link>
     
   </React.Fragment>
 )
@@ -22,8 +23,8 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <React.Fragment>
      
-    <Link class="menu-sign" to="/home">Home</Link>
-    <Link class="menu-sign" to="/Centeres">Centeres </Link>
+    <Link className="menu-sign" to="/home">Home</Link>
+    <Link className="menu-sign" to="/Centeres">Centeres </Link>
     
 
   </React.Fragment>
