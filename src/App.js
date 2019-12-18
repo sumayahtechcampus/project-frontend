@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({centeres : [...centeres]}) ; }
 
   setChildrens = (childrens) => 
-  {   console.log(childrens);
+  {   console.log('setChildrens', childrens);
 
     this.setState({childrens : [...childrens]}) ; }
 
@@ -57,8 +57,8 @@ class App extends Component {
           <Route path='/centeres' render={() => (
             <Centeres alert={this.alert} centeres={ centeres} setCenteres={this.setCenteres} />
           )} />
-           <AuthenticatedRoute path='/childrens' render={() => (
-            <Childrens alert={this.alert} childrens={childrens} setChildrens={this.setChildrens} />
+           <AuthenticatedRoute user={user} path='/my-childrens' render={() => (
+            <Childrens user={user} alert={this.alert} childrens={childrens} setChildrens={this.setChildrens} />
           )} />
 
           <Route path='/sign-in' render={() => (
