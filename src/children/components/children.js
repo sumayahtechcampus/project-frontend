@@ -47,7 +47,7 @@ class Children extends React.Component {
 
                                              <div className="row">
                                              <div className="col-sm-3 col-md-2 col-5">
-                                                 <label font-weight="bold">Relation : </label>
+                                                 <label font-weight="bold">interest : </label>
                                              </div>
                                              <div className="col-md-8 col-6">
                                             {this.props.interest}
@@ -57,7 +57,7 @@ class Children extends React.Component {
 
                                          <div className="row">
                                              <div className="col-sm-3 col-md-2 col-5">
-                                                <label font-weight="bold">Phone : </label>
+                                                <label font-weight="bold">School : </label>
                                             </div>
                                             <div className="col-md-8 col-6">
                                             {this.props.school}
@@ -65,7 +65,7 @@ class Children extends React.Component {
                                        </div> 
                                        <div className="row">
                                            <div className="col-sm-3 col-md-2 col-5">
-                                                <label font-weight="bold">Phone : </label>
+                                                <label font-weight="bold">Allergy : </label>
                                            </div>
                                             <div className="col-md-8 col-6">
                                             {this.props.allergy}                                          
