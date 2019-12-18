@@ -36,13 +36,13 @@ class SignUp extends Component {
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '', age: '', phone: '', relation: '' })
+        this.setState({ email: '', password: '', passwordConfirmation: '', age: '', phone: '', relation: '' , name:''})
         alert(messages.signUpFailure, 'danger')
       })
   }
 
   render() {
-    const { email, password, passwordConfirmation, age, phone, relation } = this.state
+    const { email, password, passwordConfirmation, age, phone, relation, name } = this.state
 
     return (
       <div>
@@ -62,6 +62,11 @@ class SignUp extends Component {
                       
 
                     </div>
+                    <div className="form-label-group">
+                      <input required name="name" id="inputEmail" className="form-control" value={name} type="text" placeholder="Full Name" 
+                        onChange={this.handleChange} />
+                    </div>
+
 
                     <div className="form-label-group">
                       <input required name="email" id="inputEmail" className="form-control" value={email} type="email" placeholder="Email" 

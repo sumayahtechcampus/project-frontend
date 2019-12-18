@@ -59,7 +59,8 @@ class SignIn extends Component {
         <label htmlFor="password"></label>
          
         <input name="password" id="inputPassword" class="form-control" value={password} type="password" placeholder="Password"
-          onChange={this.handleChange} required autofocus />  </div>
+          onChange={this.handleChange} required autofocus/> 
+           </div>
 
 
           <div className="custom-control custom-checkbox mb-3">
@@ -67,7 +68,7 @@ class SignIn extends Component {
           <label className="custom-control-label" for="customCheck1">Remember password</label>
           </div>
               
-              <button class="btn btn-lg btn-block text-uppercase btn-pos" type="submit">Sign in</button>
+              <button className="btn btn-lg btn-block text-uppercase btn-pos" type="submit">Sign in</button>
 
       </form>
       
