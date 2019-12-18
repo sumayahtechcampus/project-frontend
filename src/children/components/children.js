@@ -11,6 +11,7 @@ class Children extends React.Component {
         <p>{this.props.interest}</p>
         <p> {this.props.school}</p>
        <p> {this.props.allergy} </p>
+      
       </div>
     );
   }

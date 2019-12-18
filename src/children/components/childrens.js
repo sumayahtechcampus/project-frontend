@@ -4,8 +4,10 @@ import Children from '../components/children';
 
 class Childrens extends React.Component {
   componentDidMount() {
-    getAllChildrens()
+    console.log('qqqqqqqqqqqqq', this.props.user)
+    getAllChildrens(this.props.user)
       .then((response) => {
+        // console.log('got the data', response.data.childrens)
         this.props.setChildrens(response.data.childrens);
       })
       .catch((error) => {
@@ -14,7 +16,7 @@ class Childrens extends React.Component {
   }
   
   render() {
-    console.log(this.props.childrens)
+    console.log('qazwsx', this.props.childrens)
     
     
     let allChildrens =this.props.childrens ? this.props.childrens.map((children, index) => {
@@ -25,11 +27,13 @@ class Childrens extends React.Component {
         school={children.school}
         allergy={children.allergy}
         key={index} />;
+        
       }): null;
       console.log(allChildrens,"----", this.props.childrens)
 
 
     return allChildrens;
+    
   }
 }
 
